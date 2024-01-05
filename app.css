@@ -1,0 +1,149 @@
+/* .show{
+    background-color: #e2680e;
+    min-height: 25em;
+    max-width: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.show img{
+    align-self: flex-start;
+    height: 90%;
+    width: auto;
+}
+.id{
+    align-self: flex-end;
+    margin: 0;
+}
+.summary{
+    margin: 0;
+} */
+/* 
+.show {
+    display: flex;
+    background-color: #e2680e;
+    min-height: 25em;
+    max-width: 10em;
+    position: relative;
+}
+
+.show-left {
+    height: 25em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.show-left img {
+    position: absolute;
+    height: 90%;
+    margin: auto 0;
+}
+
+.id {
+    position: absolute;
+    bottom: 5%; 
+    left: 5%;
+    margin: 0;
+    z-index: 1;
+}
+
+.show-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+}
+
+.name {
+    margin: 0;
+}
+
+.summary {
+    margin: 0;
+} */
+
+/* =================================== */
+
+.show {
+    display: flex;
+    background-color: #e2680e;
+    min-height: 25em;
+    max-width: 10em;
+    position: relative;
+}
+
+.show-left {
+    height: 25em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.show-left img {
+    position: absolute;
+    height: 90%;
+    width: auto;
+    top: 5%;
+    left: -20%;
+    right: 0;
+    margin: auto;
+}
+
+.id {
+    position: absolute;
+    bottom: 5%; 
+    left: 5%;
+    margin: 0;
+    z-index: 1;
+}
+
+.show-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    position: relative;
+    width: 126%;
+    left: -10%;
+    text-align: center;
+}
+
+.name {
+    position: relative;
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px #8d3f2d;
+}
+
+.summary {
+    position: relative;
+    left: -10%;
+    height: 70%;
+    width: 110%;
+    margin: 0;
+    text-shadow: 1px 1px 2px #8d3f2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
