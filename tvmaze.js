@@ -6,20 +6,6 @@ const $episodesArea=$('#episodesArea');
 const $searchForm=$('#searchForm');
 const baseUrl='https://api.tvmaze.com/';
 const noImgUrl='https://tinyurl.com/missing-tv';
-// async function getShowsByTerm(term){
-//     const results=await axios.get(`https://api.tvmaze.com/search/shows?q=${term}`);
-//     console.log(results.data);
-//     results.data.forEach(result=>{
-//         console.log(result.show.id);
-//         const showId=result.show.id;
-//         console.log(result.show.name);
-//         const showName=result.show.name;
-//         console.log(result.show.summary);
-//         const showSummary=result.show.summary;
-//         console.log(result.show.image.original);
-//         const showImage=result.show.image.original;
-//     })
-// }
 
 async function getShowsByTerm(term){
     const results=await axios.get(`${baseUrl}search/shows?q=${term}`);
@@ -69,3 +55,11 @@ async function populateShows(term){
         $showsList.append($showDiv);
     })
 }
+
+$(document).ready(function(){
+    $('button').eq(0).on('click',function(){
+        const searchTerm=$('#searchForm-term').val();
+        populateShows(searchTerm);
+        $('#searchForm-term').val('');
+    })
+})
