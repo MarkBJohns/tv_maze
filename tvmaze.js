@@ -1,4 +1,5 @@
 "use strict";
+console.log('tv maze');
 
 const $showsList=$('#showsList');
 const $episodesArea=$('#episodesArea');
@@ -45,4 +46,26 @@ async function makeCard(show){
         $summary.html(shows[0].summary);
         $image.attr('src',shows[0].image);
     }
+}
+
+async function populateShows(term){
+    const shows=await getShowsByTerm(term);
+    $showsList.empty();
+    shows.forEach(show=>{
+        const $showDiv=$('<div>').addClass('show');
+        const $showLeft=$('<div>').addClass('show-left');
+        const $showRight=$('<div>').addClass('show-right');
+
+        const $image=$('<img>').addClass('image').attr('src',show.image);
+        const $id=$('<p>').addClass('id').text(show.id);
+        $showLeft.append($image,$id);
+
+        const $header=$('<div>').addClass('header').append($('<h2>').addClass('name').text(show.name));
+        const $summary=$('<div>').addClass('summary').html(show.summary);
+        $showRight.append($header,$summary);
+
+        $showDiv.append($showLeft,$showRight);
+
+        $showsList.append($showDiv);
+    })
 }

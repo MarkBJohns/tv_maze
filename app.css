@@ -100,6 +100,7 @@
     position: absolute;
     height: 90%;
     width: auto;
+    max-width: 80%;
     top: 5%;
     left: -20%;
     right: 0;
@@ -115,6 +116,7 @@
 }
 
 .show-right {
+    height: 25em;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -146,4 +148,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: scroll;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
+
