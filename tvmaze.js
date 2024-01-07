@@ -43,7 +43,11 @@ async function populateShows(term){
         const $showRight=$('<div>').addClass('show-right');
 
         const $image=$('<img>').addClass('image').attr('src',show.image);
-        const $id=$('<p>').addClass('id').text(show.id);
+        const $id=$('<p>').addClass('id').text('Episodes').attr('data-show-id',show.id);
+        $id.on('click',function(){
+            $showsList.empty().append($showDiv);
+            $episodesArea.css('display','block');
+        })
         $showLeft.append($image,$id);
 
         const $header=$('<div>').addClass('header').append($('<h2>').addClass('name').text(show.name));
