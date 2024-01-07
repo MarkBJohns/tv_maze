@@ -37,6 +37,17 @@ async function makeCard(show){
 async function populateShows(term){
     const shows=await getShowsByTerm(term);
     $showsList.empty();
+    function handleClick($id,$showDiv){
+        if($id.text()==='Episodes'){
+            $showsList.children('.show').not($showDiv).css('display','none');
+            $episodesArea.css('display','block');
+            $id.text('Go Back');
+        }else{
+            $showsList.children('.show').css('display','flex');
+            $episodesArea.css('display','none');
+            $id.text('Episodes');
+        }
+    }
     shows.forEach(show=>{
         const $showDiv=$('<div>').addClass('show');
         const $showLeft=$('<div>').addClass('show-left');
@@ -45,8 +56,7 @@ async function populateShows(term){
         const $image=$('<img>').addClass('image').attr('src',show.image);
         const $id=$('<p>').addClass('id').text('Episodes').attr('data-show-id',show.id);
         $id.on('click',function(){
-            $showsList.empty().append($showDiv);
-            $episodesArea.css('display','block');
+            handleClick($id,$showDiv);
         })
         $showLeft.append($image,$id);
 
